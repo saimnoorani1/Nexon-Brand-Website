@@ -668,3 +668,229 @@ html {
 .whatsappbtn:hover img {
   transform: scale(1.1);
 }
+
+
+@media screen and (max-width: 991px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 30px;
+    gap: 40px;
+  }
+
+  .herotext {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .herotext p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroimage {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .heroimage img {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .productcard,
+  .featurecard,
+  .reviewcard {
+    max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .navbarlinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .herotext h1 {
+    font-size: 44px;
+  }
+
+  .sectiontitle {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+
+  .footercontainer {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footerbrand {
+    max-width: 100%;
+  }
+
+  .footerdesc {
+    margin: 0 auto 20px auto;
+  }
+
+  .socialicons {
+    justify-content: center;
+  }
+
+  .footerlinks,
+  .footercontact {
+    align-items: center;
+  }
+
+  .footerbottom {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 15px;
+  }
+
+  .logo h2 {
+    font-size: 22px;
+  }
+
+  .navbarlinks {
+    gap: 10px;
+  }
+
+  .navbarlinks a {
+    font-size: 14px;
+  }
+
+  .cartbtn {
+    padding: 8px 20px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .herotext h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .herotext p {
+    font-size: 14px;
+  }
+
+  .heroimage {
+    padding: 20px 0;
+  }
+
+  .heroimage img {
+    max-width: 250px;
+    min-width: 200px;
+  }
+
+  .productssection,
+  .featuressection,
+  .reviewssection {
+    padding: 12vw 3vw;
+  }
+
+  .productflex,
+  .featureflex,
+  .reviewflex {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .productcard,
+  .featurecard,
+  .reviewcard {
+    flex: 0 1 47%;
+    max-width: 48%;
+    min-width: 140px;
+    padding: 12px;
+  }
+
+  .cardimage {
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .cardtitle {
+    font-size: 0.85rem;
+  }
+
+  .premiumtext,
+  .normaltext {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .premiumtag {
+    font-size: 0.55rem;
+    padding: 3px 6px;
+    margin-bottom: 10px;
+  }
+
+  .buybtn {
+    font-size: 0.75rem;
+    padding: 8px 5px;
+  }
+
+  .featureicon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  .featuretitle,
+  .reviewername {
+    font-size: 0.95rem;
+  }
+
+  .featuredesc,
+  .reviewtext {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .reviewstars {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .sectiontitle {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .whatsappbtn {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .footersection {
+    padding: 12vw 5vw 5vw 5vw;
+  }
+}
