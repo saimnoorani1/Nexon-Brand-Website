@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import { Navbar } from "./components/components";
 import { Hero } from "./components/components";
 import { Products } from "./components/components";
@@ -7,11 +8,12 @@ import { Reviews } from "./components/components";
 import { Footer } from "./components/components";
 
 function App() {
+  const [cartcounter , setcartcounter] = useState(0)
   return (
     <>
-      < Navbar />
+      < Navbar cartcounter={cartcounter}/>
       < Hero />
-      < Products />
+      < Products cartcounter={cartcounter} setcartcounter={setcartcounter}/>
       < Features />
       < Reviews />
       < Footer />
