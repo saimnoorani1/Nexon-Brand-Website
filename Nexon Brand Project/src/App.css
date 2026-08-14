@@ -669,6 +669,22 @@ html {
   transform: scale(1.1);
 }
 
+.cartbtn {
+  position: relative !important;
+}
+
+.cartbadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff3b3b;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 3px 7px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
 
 @media screen and (max-width: 991px) {
   .navbar {
