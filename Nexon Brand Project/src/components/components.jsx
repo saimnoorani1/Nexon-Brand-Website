@@ -9,7 +9,7 @@ import img9 from '../assets/magcharger.png';
 import img10 from '../assets/headphone.png';
 import img11 from '../assets/speaker.png';
 
-function Navbar() {
+function Navbar({cartcounter}) {
     return (
         <nav className="navbar">
 
@@ -25,7 +25,9 @@ function Navbar() {
                 <a href="#contact">Contact Us</a>
             </div>
 
-            <button className="cartbtn">Cart</button>
+            <button className="cartbtn">Cart 🛒
+                {cartcounter > 0 && <span className="cartbadge">{cartcounter}</span>}
+            </button>
 
         </nav>
     )
@@ -63,7 +65,7 @@ function Hero() {
     )
 }
 
-function Products() {
+function Products({cartcounter , setcartcounter}) {
     const myProducts = [
         {
             id: 1,
@@ -155,6 +157,9 @@ function Products() {
                         price={item.price}
                         image={item.image}
                         rating={item.rating}
+
+                        cartcounter = {cartcounter}
+                        setcartcounter = {setcartcounter}
                     />
                 ))}
             </div>
@@ -162,7 +167,7 @@ function Products() {
     );
 }
 
-function Productcard({ title, price, image, rating }) {
+function Productcard({ title, price, image, rating , cartcounter , setcartcounter}) {
     const ispremium = price > 200
 
     return (
@@ -171,7 +176,7 @@ function Productcard({ title, price, image, rating }) {
             <h3 className="cardtitle">{title}</h3>
             <p className={ispremium ? "premiumtext" : "normaltext"}>Price: ${price}</p>
             {ispremium && <p className="premiumtag">High-End Device</p>}
-            <button className="buybtn">
+            <button className="buybtn" onClick={ () => setcartcounter(cartcounter + 1)}>
                 {rating > 4.5 ? 'Buy Top Rated' : 'Add to Cart'}
             </button>
         </div>
