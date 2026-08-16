@@ -2,8 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* NAVBAR */
-
 .navbar {
   width: 100%;
   display: flex;
@@ -37,9 +35,12 @@ html {
 }
 
 .navbarlinks a {
+  position: relative;
+  width: fit-content;
   text-decoration: none;
   color: #ddd6fe;
   font-size: 15px;
+  transition: all 0.3s ease;
 }
 
 .cartbtn {
@@ -49,14 +50,7 @@ html {
   background: #a855f7;
   color: #ffffff;
   cursor: pointer;
-}
-
-
-.navbarlinks a {
-  position: relative;
-  width: fit-content;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  position: relative !important;
 }
 
 .navbarlinks a::after {
@@ -70,15 +64,9 @@ html {
   transition: width 0.3s ease;
 }
 
-.navbarlinks a:hover {
-  color: #a855f7;
-}
-
 .navbarlinks a:hover::after {
   width: 100%;
 }
-
-/* HERO */
 
 .hero {
   width: 100%;
@@ -134,19 +122,11 @@ html {
 
 .heroimage img {
   width: 100%;
-  max-width: 540px;
-  transform: translateX(-25px);
-  height: auto;
-  object-fit: contain;
-}
-
-.heroimage img {
-  width: 100%;
   max-width: 40vw;
   min-width: 280px;
   height: auto;
   object-fit: contain;
-
+  transform: translateX(-25px);
   animation:
     hologramReveal 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards,
     futuristicFloat 6s ease-in-out infinite 1.2s;
@@ -158,13 +138,11 @@ html {
     transform: scale(0.7) translateY(60px) rotateX(15deg);
     filter: drop-shadow(0 0 0 rgba(170, 59, 255, 0)) blur(10px);
   }
-
   50% {
     opacity: 0.8;
     transform: scale(1.05) translateY(-10px) rotateX(-5deg);
     filter: drop-shadow(0 0 40px rgba(170, 59, 255, 0.8)) blur(2px);
   }
-
   100% {
     opacity: 1;
     transform: scale(1) translateY(0) rotateX(0deg);
@@ -177,30 +155,23 @@ html {
     transform: translateY(0px) rotateZ(0deg) scale(1);
     filter: drop-shadow(0 0 20px rgba(170, 59, 255, 0.4));
   }
-
   25% {
     transform: translateY(-15px) rotateZ(1.5deg) scale(1.02);
     filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.4));
   }
-
   50% {
     transform: translateY(-25px) rotateZ(0deg) scale(1);
     filter: drop-shadow(0 0 50px rgba(170, 59, 255, 0.7));
   }
-
   75% {
     transform: translateY(-15px) rotateZ(-1.5deg) scale(0.98);
     filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.4));
   }
-
   100% {
     transform: translateY(0px) rotateZ(0deg) scale(1);
     filter: drop-shadow(0 0 20px rgba(170, 59, 255, 0.4));
   }
 }
-
-
-/* Product */
 
 .productssection {
   width: 100%;
@@ -308,14 +279,11 @@ html {
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
-/* Feature and review section */
-
 @keyframes fadeUp {
   0% {
     opacity: 0;
     transform: translateY(40px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -493,7 +461,6 @@ html {
   text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
 }
 
-
 .footersection {
   width: 100%;
   background-color: #05040a;
@@ -637,11 +604,9 @@ html {
   0% {
     transform: translateY(0px);
   }
-
   50% {
     transform: translateY(-10px);
   }
-
   100% {
     transform: translateY(0px);
   }
@@ -669,10 +634,6 @@ html {
   transform: scale(1.1);
 }
 
-.cartbtn {
-  position: relative !important;
-}
-
 .cartbadge {
   position: absolute;
   top: -8px;
@@ -690,36 +651,30 @@ html {
   .navbar {
     padding: 15px 30px;
   }
-
   .hero {
     flex-direction: column;
     text-align: center;
     padding: 50px 30px;
     gap: 40px;
   }
-
   .herotext {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   .herotext p {
     margin-left: auto;
     margin-right: auto;
   }
-
   .heroimage {
     width: 100%;
     margin-top: 10px;
   }
-
   .heroimage img {
     max-width: 320px;
     width: 100%;
   }
-
   .productcard,
   .featurecard,
   .reviewcard {
@@ -729,51 +684,56 @@ html {
 
 @media screen and (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px 20px;
-    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
-
+  .logo {
+    order: 1;
+  }
+  .cartbtn {
+    order: 2;
+    margin-top: 0;
+  }
   .navbarlinks {
+    order: 3;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    margin-top: 10px;
   }
-
   .herotext h1 {
     font-size: 44px;
   }
-
   .sectiontitle {
     font-size: 32px;
     margin-bottom: 25px;
   }
-
   .footercontainer {
     flex-direction: column;
     gap: 30px;
     align-items: center;
     text-align: center;
   }
-
   .footerbrand {
     max-width: 100%;
   }
-
   .footerdesc {
     margin: 0 auto 20px auto;
   }
-
   .socialicons {
     justify-content: center;
   }
-
   .footerlinks,
   .footercontact {
     align-items: center;
   }
-
   .footerbottom {
     flex-direction: column;
     gap: 15px;
@@ -782,62 +742,50 @@ html {
 
 @media screen and (max-width: 480px) {
   .navbar {
-    padding: 15px;
+    padding: 10px 15px;
   }
-
   .logo h2 {
     font-size: 22px;
   }
-
   .navbarlinks {
     gap: 10px;
+    margin-top: 8px;
   }
-
   .navbarlinks a {
     font-size: 14px;
   }
-
   .cartbtn {
-    padding: 8px 20px;
+    padding: 8px 16px;
     font-size: 14px;
-    margin-top: 5px;
   }
-
   .hero {
     padding: 30px 15px;
   }
-
   .herotext h1 {
     font-size: 36px;
     margin-bottom: 15px;
   }
-
   .herotext p {
     font-size: 14px;
   }
-
   .heroimage {
     padding: 20px 0;
   }
-
   .heroimage img {
     max-width: 250px;
     min-width: 200px;
   }
-
   .productssection,
   .featuressection,
   .reviewssection {
     padding: 12vw 3vw;
   }
-
   .productflex,
   .featureflex,
   .reviewflex {
     gap: 10px;
     justify-content: center;
   }
-
   .productcard,
   .featurecard,
   .reviewcard {
@@ -846,66 +794,54 @@ html {
     min-width: 140px;
     padding: 12px;
   }
-
   .cardimage {
     height: 100px;
     margin-bottom: 10px;
   }
-
   .cardtitle {
     font-size: 0.85rem;
   }
-
   .premiumtext,
   .normaltext {
     font-size: 0.8rem;
     margin-bottom: 6px;
   }
-
   .premiumtag {
     font-size: 0.55rem;
     padding: 3px 6px;
     margin-bottom: 10px;
   }
-
   .buybtn {
     font-size: 0.75rem;
     padding: 8px 5px;
   }
-
   .featureicon {
     font-size: 2.2rem;
     margin-bottom: 10px;
   }
-
   .featuretitle,
   .reviewername {
     font-size: 0.95rem;
   }
-
   .featuredesc,
   .reviewtext {
     font-size: 0.75rem;
     line-height: 1.4;
   }
-
   .reviewstars {
     font-size: 0.9rem;
     margin-bottom: 10px;
   }
-
   .sectiontitle {
     font-size: 24px;
     margin-bottom: 20px;
   }
-
   .whatsappbtn {
     width: 50px;
     height: 50px;
     bottom: 15px;
     right: 15px;
   }
-
   .footersection {
     padding: 12vw 5vw 5vw 5vw;
   }
